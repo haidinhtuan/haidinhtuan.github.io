@@ -1,8 +1,12 @@
+/* ============================================
+   Elegant Dark Theme — Charcoal + Gold Accents
+   ============================================ */
+
 body {
   font-family: 'Open Sans', sans-serif;
   padding-top: 54px;
-  color: #4a5568;
-  background-color: #f8f9fa;
+  color: #c8ccd0;
+  background-color: #14171c;
 }
 
 @media (min-width: 992px) {
@@ -12,16 +16,12 @@ body {
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Saira Extra Condensed', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  color: #1a202c;
+  color: #e8ecf0;
 }
 
 h1 {
@@ -31,6 +31,19 @@ h1 {
 
 h2 {
   font-size: 3.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #c9a84c, transparent);
+  border-radius: 2px;
 }
 
 .subheading {
@@ -38,15 +51,27 @@ h2 {
   font-weight: 500;
   font-family: 'Saira Extra Condensed', sans-serif;
   font-size: 1.35rem;
-  color: #4a5568;
+  color: #a0aab4;
 }
 
+/* Links */
+a {
+  color: #c9a84c;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+a:hover, a:focus, a:active {
+  color: #e0c76e;
+  text-shadow: 0 0 8px rgba(201, 168, 76, 0.15);
+}
+
+/* Social Icons */
 .list-social-icons a {
-  color: #4a5568;
+  color: #8a9199;
 }
 
 .list-social-icons a:hover {
-  color: #2b6cb0;
+  color: #c9a84c;
 }
 
 .list-social-icons a .fa-lg {
@@ -58,19 +83,28 @@ h2 {
 }
 
 .list-icons .list-inline-item i:hover {
-  color: #2b6cb0;
+  color: #c9a84c;
+}
+
+/* Sidebar Navigation */
+#sideNav {
+  border-right: 1px solid rgba(201, 168, 76, 0.15);
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.08rem;
   padding: 0.75rem 1rem;
-  transition: background-color 0.2s ease;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 #sideNav .navbar-nav .nav-item .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(201, 168, 76, 0.08);
+  border-left-color: #c9a84c;
+  color: #ffffff;
 }
 
 @media (min-width: 992px) {
@@ -92,7 +126,8 @@ h2 {
   #sideNav .navbar-brand .img-profile {
     max-width: 10rem;
     max-height: 10rem;
-    border: 0.5rem solid rgba(255, 255, 255, 0.2);
+    border: 0.4rem solid rgba(201, 168, 76, 0.3);
+    box-shadow: 0 0 20px rgba(201, 168, 76, 0.1);
   }
   #sideNav .navbar-collapse {
     display: flex;
@@ -113,15 +148,26 @@ h2 {
   }
 }
 
+/* Primary Colors */
+.bg-primary {
+  background: linear-gradient(180deg, #1b1f26 0%, #12151a 100%) !important;
+}
+
+.text-primary {
+  color: #c9a84c !important;
+}
+
+/* Sections */
 section.resume-section {
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 5rem !important;
   padding-bottom: 5rem !important;
-  background-color: #ffffff;
+  background-color: #14171c;
+  position: relative;
 }
 
 section.resume-section:nth-child(even) {
-  background-color: #f7fafc;
+  background-color: #181c22;
 }
 
 section.resume-section .resume-item .resume-date {
@@ -144,29 +190,27 @@ section.resume-section .resume-item .resume-date {
   }
 }
 
-.bg-primary {
-  background-color: #1a365d !important;
+/* Resume Items — Card Style */
+.resume-item {
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.02);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.text-primary {
-  color: #2b6cb0 !important;
-}
-
-a {
-  color: #2b6cb0;
-  transition: color 0.2s ease;
-}
-
-a:hover, a:focus, a:active {
-  color: #1a365d;
+.resume-item:hover {
+  background: rgba(201, 168, 76, 0.03);
+  border-color: rgba(201, 168, 76, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .resume-item h3 {
-  color: #1a202c;
+  color: #e8ecf0;
 }
 
 .resume-item .subheading {
-  color: #2d3748;
+  color: #c9a84c;
 }
 
 .resume-item ul {
@@ -176,65 +220,60 @@ a:hover, a:focus, a:active {
 .resume-item ul li {
   margin-bottom: 0.4rem;
   line-height: 1.6;
+  color: #b0b8c0;
 }
 
-.text-muted {
-  color: #718096 !important;
-}
-
-.fa-ul .fa-li.fa.fa-trophy.text-warning {
-  color: #d69e2e !important;
-}
-
-.fa-ul .fa-li.fa.fa-check {
-  color: #2b6cb0;
-}
-
+/* Date badges */
 .resume-date .text-primary {
   font-weight: 600;
+  background: rgba(201, 168, 76, 0.08);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
 }
 
-/* Scroll-triggered animations */
+/* Muted text */
+.text-muted {
+  color: #6b7580 !important;
+}
+
+/* Certifications */
+.fa-ul .fa-li.fa.fa-trophy.text-warning {
+  color: #c9a84c !important;
+}
+
+/* Skills checkmarks */
+.fa-ul .fa-li.fa.fa-check {
+  color: #5ba87c;
+}
+
+/* Publications file icon */
+.fa-ul .fa-li.fa.fa-file-text-o {
+  color: #7a8a9a;
+}
+
+/* ============================================
+   Scroll-triggered Animations
+   ============================================ */
+
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .animate-on-scroll {
@@ -247,23 +286,12 @@ a:hover, a:focus, a:active {
   animation-timing-function: ease-out;
 }
 
-.animate-fade-up.animated {
-  animation-name: fadeInUp;
-}
+.animate-fade-up.animated { animation-name: fadeInUp; }
+.animate-fade-left.animated { animation-name: fadeInLeft; }
+.animate-fade-right.animated { animation-name: fadeInRight; }
+.animate-fade-in.animated { animation-name: fadeIn; }
 
-.animate-fade-left.animated {
-  animation-name: fadeInLeft;
-}
-
-.animate-fade-right.animated {
-  animation-name: fadeInRight;
-}
-
-.animate-fade-in.animated {
-  animation-name: fadeIn;
-}
-
-/* Stagger children animations */
+/* Stagger children */
 .resume-item.animate-on-scroll.animated .resume-content {
   animation: fadeInLeft 0.6s ease-out both;
 }
@@ -274,24 +302,21 @@ a:hover, a:focus, a:active {
 }
 
 /* Section headings */
-section.resume-section h2 {
-  opacity: 0;
-}
-
+section.resume-section h2 { opacity: 0; }
 section.resume-section h2.animated {
   animation: fadeInLeft 0.5s ease-out both;
 }
 
-/* Social icons bounce on hover */
+/* Social icons hover */
 .list-social-icons a .fa-stack {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .list-social-icons a:hover .fa-stack {
   transform: translateY(-4px);
 }
 
-/* Trophy icons subtle pulse on hover */
+/* Trophy pulse on hover */
 .fa-ul li:hover .fa-trophy {
   animation: pulse 0.4s ease;
 }
@@ -302,7 +327,7 @@ section.resume-section h2.animated {
   100% { transform: scale(1); }
 }
 
-/* Skill check marks slide in */
+/* Skill check slide */
 .fa-ul .fa-li.fa.fa-check {
   transition: transform 0.3s ease;
 }
@@ -311,11 +336,9 @@ section.resume-section h2.animated {
   transform: translateX(3px);
 }
 
-/* Reduce motion for users who prefer it */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .animate-on-scroll {
-    opacity: 1;
-  }
+  .animate-on-scroll { opacity: 1; }
   .animate-on-scroll.animated,
   .resume-item.animate-on-scroll.animated .resume-content,
   .resume-item.animate-on-scroll.animated .resume-date,
@@ -323,4 +346,22 @@ section.resume-section h2.animated {
     animation: none;
     opacity: 1;
   }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #14171c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2f38;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3f48;
 }
